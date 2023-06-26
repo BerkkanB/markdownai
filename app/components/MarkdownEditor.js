@@ -24,7 +24,7 @@ export default function MarkdownEditor() {
         spaces +
         markdownText.substring(selectionEnd);
       setMarkdownText(updatedText);
-      // Set the cursor position after the inserted spaces
+      // Set the cursor position after the inserted spaceVS 
       current.selectionStart = selectionStart + spaces.length;
       current.selectionEnd = selectionStart + spaces.length;
     }
