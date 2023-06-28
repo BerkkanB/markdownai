@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import MarkdownEditor from './components/MarkdownEditor'
-
 
 export default function Home() {
   return (
@@ -9,8 +6,6 @@ export default function Home() {
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
         Markdown Editor
       </h1>
-
-      <MarkdownEditor />
     </div>
   </div>
   )
