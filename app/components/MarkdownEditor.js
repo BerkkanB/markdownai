@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
@@ -24,7 +23,7 @@ export default function MarkdownEditor() {
         spaces +
         markdownText.substring(selectionEnd);
       setMarkdownText(updatedText);
-      // Set the cursor position after the inserted spaceVS 
+      // Set the cursor position after the inserted space
       current.selectionStart = selectionStart + spaces.length;
       current.selectionEnd = selectionStart + spaces.length;
     }
@@ -34,7 +33,9 @@ export default function MarkdownEditor() {
     const { current } = textareaRef;
     const { selectionStart, selectionEnd } = current;
     const selectedText = markdownText.substring(selectionStart, selectionEnd);
-    const formattedText = isLink ? `[${selectedText}](url)` : `${tag}${selectedText}${tag}`;
+    const formattedText = isLink
+      ? `[${selectedText}](url)`
+      : `${tag}${selectedText}${tag}`;
     const updatedText =
       markdownText.substring(0, selectionStart) +
       formattedText +
@@ -95,10 +96,16 @@ export default function MarkdownEditor() {
           Link
         </button>
         <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mr-2"
           onClick={() => handleFormatting("> ")}
         >
           Quote
+        </button>
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+          onClick={() => handleFormatting("#")}
+        >
+          Heading
         </button>
       </div>
       <textarea
