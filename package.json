@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@codemirror/lang-markdown": "^6.2.0",
+    "@codemirror/language-data": "^6.3.1",
+    "@uiw/codemirror-themes-all": "^4.21.7",
+    "@uiw/react-codemirror": "^4.21.7",
     "autoprefixer": "10.4.14",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
